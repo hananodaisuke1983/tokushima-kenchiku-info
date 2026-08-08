@@ -1,1 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="徳島県内の建築工事に関する最新の入札情報・工法紹介・自治体リンク集。">
+    <title>徳島建築情報ポータル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
+        .card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .update-badge { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+        .external-link { color: #2563eb; text-decoration: none; transition: all 0.2s; }
+        .external-link:hover { color: #1d4ed8; text-decoration: underline; }
+        .firm-card { border-left: 4px solid #2563eb; }
+        .municipality-tag { background-color: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: bold; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans leading-relaxed">
 
+    <!-- Top Navigation -->
+    <nav class="gradient-bg text-white sticky top-0 z-50 shadow-xl">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-500 p-2 rounded-lg">
+                    <i class="fas fa-building text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight">徳島建築情報ポータル</span>
+                    <p class="text-[10px] opacity-70 uppercase tracking-widest">Architecture & Public Works Info</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#latest" class="hover:text-blue-300 transition">最新入札情報</a>
+                <a href="#methods" class="hover:text-blue-300 transition">工法紹介</a>
+                <a href="#municipalities" class="hover:text-blue-300 transition">自治体リンク</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-10">
+
+        <!-- 主要工法 -->
+        <section id="methods" class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-black text-slate-800 tracking-tight">主要工法紹介</h2>
+                <span class="text-xs text-slate-400 font-medium">Construction Methods</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm card">
+                    <h3 class="text-lg font-bold text-slate-700 mb-4 flex items-center">
+                        <i class="fas fa-layer-group text-blue-600 mr-3"></i>地盤改良
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="https://www.ultracolumn.jp/" target="_blank" class="external-link font-medium">ウルトラコラム工法</a></li>
+                        <li><a href="http://sscolumn.com/" target="_blank" class="external-link font-medium">SSコラム工法</a></li>
+                        <li><a href="http://www.soushin-sangyou.jp/method-02.html" target="_blank" class="external-link font-medium">エルマッドS工法</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm card">
+                    <h3 class="text-lg font-bold text-slate-700 mb-4 flex items-center">
+                        <i class="fas fa-monument text-emerald-600 mr-3"></i>既成杭・鋼管杭
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="https://www.japanpile.co.jp/method/buildingtech/hyper-mega/" target="_blank" class="external-link font-medium">ハイパーメガ工法</a></li>
+                        <li><a href="https://www.asahikasei-kenzai.com/akk/eazet/" target="_blank" class="external-link font-medium">EAZET工法</a></li>
+                        <li><a href="http://www.alphaforce.jp/" target="_blank" class="external-link font-medium">アルファーフォースパイル</a></li>
+                        <li><a href="https://www.w-zero.jp/" target="_blank" class="external-link font-medium">W-ZERO工法</a></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm card">
+                    <h3 class="text-lg font-bold text-slate-700 mb-4 flex items-center">
+                        <i class="fas fa-leaf text-green-600 mr-3"></i>木杭・砕石
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="https://www.ksustech.co.jp/gt/work/work_h/h01" target="_blank" class="external-link font-medium">環境パイル工法</a></li>
+                        <li><a href="https://www.hyspeed.co.jp/" target="_blank" class="external-link font-medium">ハイスピード工法</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新入札公告（建築一式工事） -->
+        <section id="latest" class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-black text-slate-800 tracking-tight">最新の建築一式工事 入札公告</h2>
+                <div class="text-right">
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter mb-1">Last Update</div>
+                    <div class="text-sm font-mono text-blue-600 font-bold" id="last-update">最終取得日: 2026/08/08 09:41</div>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                <table class="w-full text-sm">
+                    <thead class="bg-blue-50 border-b border-slate-200">
+                        <tr>
+                            <th class="py-4 px-6 text-left font-bold text-slate-700">案件名</th>
+                            <th class="py-4 px-6 text-left font-bold text-slate-700">工種</th>
+                            <th class="py-4 px-6 text-left font-bold text-slate-700">公告日 / 開札日</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <!-- LATEST_TENDERS_START -->
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８交拠　渦の道　鳴・鳴門　建具改修工事（企育）</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８阿耕　耐震対策　一の堰　操作室改修工事（着指）</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/28 / 開札: 2026/08/31</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８住宅　小松島団地　小・中郷　１号棟防水改修工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/30 / 開札: 2026/09/02</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８営繕　川島高等学校　吉・川島　北棟内部改修工事建築</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/29 / 開札: 2026/09/01</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８住宅　中島田町団地　徳・中島田　５号棟屋根・外壁改修工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８住宅　北島田町団地　徳・北矢三　４号棟屋根・外壁改修工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８住宅　松茂団地　松・満穂　１号棟屋根・外壁改修工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８住宅　松茂東団地　松・満穂　２号棟屋根・外壁改修工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８住宅　阿南団地　阿南・津乃峰　２号棟屋根・外壁改修工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８営繕　家畜防疫資材倉庫　石・石井　新築工事建築（着指）（担）</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８営繕　川島高等学校　吉・川島　北棟外部改修工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８営繕　文学書道館　徳・中前川　外部改修工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８営繕　池田高等学校他　三・池田他　トイレ改修工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８営繕　牟岐少年自然の家　牟・灘　宿泊棟外部改修工事（着指）</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８営繕　阿南合同庁舎　阿南・富岡　本館トイレ改修工事建築</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８営繕　障がい者交流プラザ　徳・南矢三　プール天井改修工事（企育）</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/16 / 開札: 2026/08/20</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="py-4 px-6 font-bold text-slate-800">Ｒ８警営　徳島県警察学校体育館　徳・論田　内外装改修工事建築（担）</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">建築一式工事</td>
+                            <td class="py-4 px-6 text-slate-500 text-xs">公告: 2026/07/29 / 開札: 2026/09/01</td>
+                        </tr>
+                        <!-- LATEST_TENDERS_END -->
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-3">出典: <a href="https://e-ppi.pref.tokushima.lg.jp/" target="_blank" class="external-link">徳島県入札情報サービス</a>（公開情報）</p>
+        </section>
+
+        <!-- 自治体リンク集 -->
+        <section id="municipalities" class="mb-12">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-black text-slate-800 tracking-tight">自治体別・建築工事入札情報リンク集</h2>
+                <span class="text-xs text-slate-400 font-medium">Municipality Links</span>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="https://e-ppi.pref.tokushima.lg.jp/" target="_blank" class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:bg-blue-50 transition card">
+                    <div class="text-xs font-bold text-slate-700">徳島県</div>
+                </a>
+                <a href="https://www.city.tokushima.tokushima.jp/smph/shisei/keizai/nyusatsu/kouji/ppi.html" target="_blank" class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:bg-blue-50 transition card">
+                    <div class="text-xs font-bold text-slate-700">徳島市</div>
+                </a>
+                <a href="https://www.city.naruto.tokushima.jp/shisei/nyusatsu/" target="_blank" class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:bg-blue-50 transition card">
+                    <div class="text-xs font-bold text-slate-700">鳴門市</div>
+                </a>
+                <a href="https://www.city.komatsushima.lg.jp/shisei/nyusatsu/" target="_blank" class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:bg-blue-50 transition card">
+                    <div class="text-xs font-bold text-slate-700">小松島市</div>
+                </a>
+                <a href="https://www.city.anan.tokushima.jp/shisei/nyusatsu/" target="_blank" class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:bg-blue-50 transition card">
+                    <div class="text-xs font-bold text-slate-700">阿南市</div>
+                </a>
+                <a href="https://www.city.yoshinogawa.lg.jp/category/bunya/nyusatsu/" target="_blank" class="bg-white p-4 rounded-xl border border-slate-200 text-center hover:bg-blue-50 transition card">
+                    <div class="text-xs font-bold text-slate-700">吉野川市</div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm mb-4">徳島建築情報ポータル &copy; 2026</p>
+            <p class="text-[10px] uppercase tracking-widest">公開情報のみを掲載しています</p>
+        </div>
+    </footer>
+
+</body>
+</html>
